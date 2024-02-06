@@ -161,12 +161,50 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'es'
 
 LANGUAGES = [
     ("en", _("English")),
+    ("es", _("Spanish")),
     # Add additional languages here
 ]
+
+
+CMS_LANGUAGES = {
+    1: [
+        {
+            'code': 'en',
+            'name': _("English"),
+            'redirect_on_fallback': True,
+            'public': True,
+            'hide_untranslated': False,
+        },
+        {
+            'code': 'es',
+            'name': _("Spanish"),
+            'redirect_on_fallback': True,
+            'public': True,
+            'hide_untranslated': False,
+        },
+    ],
+    'default': {
+        'redirect_on_fallback': True,
+        'public': True,
+        'hide_untranslated': False,
+    }
+}
+
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'en'},
+        {'code': 'es'},
+        # Add any other language codes here
+    ),
+    'default': {
+        'fallback': 'en',
+        'hide_untranslated': False,
+    }
+}
 
 TIME_ZONE = 'UTC'
 
